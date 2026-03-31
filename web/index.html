@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壮乡乐脉</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="header">
+            <h1>壮乡乐脉</h1>
+        </div>
+        
+        <div id="content">
+            <div id="home" class="page active">
+                <h2>首页</h2>
+                <div class="btn-container">
+                    <button onclick="navigateTo('create')">创作</button>
+                    <button onclick="navigateTo('show')">展示</button>
+                    <button onclick="navigateTo('interact')">互动</button>
+                    <button onclick="navigateTo('profile')">我的</button>
+                </div>
+            </div>
+            
+            <div id="create" class="page">
+                <h2>创作</h2>
+                <div class="form-group">
+                    <label>音乐风格</label>
+                    <div class="style-options">
+                        <button data-style="folk">民族风</button>
+                        <button data-style="pop">流行</button>
+                        <button data-style="classical">古典</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>歌曲长度</label>
+                    <select id="songLength">
+                        <option value="1">1分钟</option>
+                        <option value="2">2分钟</option>
+                        <option value="3" selected>3分钟</option>
+                        <option value="4">4分钟</option>
+                        <option value="5">5分钟</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>节奏速度</label>
+                    <select id="tempo">
+                        <option value="slow">慢速</option>
+                        <option value="medium" selected>中速</option>
+                        <option value="fast">快速</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>情感风格</label>
+                    <select id="emotion">
+                        <option value="happy">欢快</option>
+                        <option value="sad">悲伤</option>
+                        <option value="lyrical" selected>抒情</option>
+                        <option value="energetic">激昂</option>
+                    </select>
+                </div>
+                <button id="generateBtn" onclick="generateMusic()">生成音乐</button>
+                <div id="result" class="result"></div>
+            </div>
+            
+            <div id="show" class="page">
+                <h2>展示</h2>
+                <div class="categories">
+                    <button class="category-btn active" data-category="all">全部</button>
+                    <button class="category-btn" data-category="folk">民族风</button>
+                    <button class="category-btn" data-category="pop">流行</button>
+                    <button class="category-btn" data-category="classical">古典</button>
+                </div>
+                <div class="works-list">
+                    <div class="work-item" onclick="navigateTo('work-detail')">
+                        <h3>壮乡春早</h3>
+                        <p>广西壮族自治区歌舞团</p>
+                    </div>
+                    <div class="work-item" onclick="navigateTo('work-detail')">
+                        <h3>刘三姐</h3>
+                        <p>祖海</p>
+                    </div>
+                    <div class="work-item" onclick="navigateTo('work-detail')">
+                        <h3>壮乡情歌</h3>
+                        <p>蒙鹂君</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="interact" class="page">
+                <h2>互动</h2>
+                <div class="comment-section">
+                    <textarea placeholder="写下你的评论..."></textarea>
+                    <button onclick="postComment()">发布评论</button>
+                </div>
+                <div class="comments-list">
+                    <div class="comment-item">
+                        <p class="comment-author">用户1</p>
+                        <p class="comment-content">这首歌很好听！</p>
+                    </div>
+                    <div class="comment-item">
+                        <p class="comment-author">用户2</p>
+                        <p class="comment-content">支持壮族音乐！</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="profile" class="page">
+                <h2>我的</h2>
+                <div class="user-info">
+                    <h3>用户中心</h3>
+                </div>
+                <div class="my-works">
+                    <h3>我的创作</h3>
+                    <div class="work-item">
+                        <h4>我的创作歌曲</h4>
+                        <p>状态：未发布</p>
+                        <p>创建时间：2024-01-15</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="work-detail" class="page">
+                <h2>作品详情</h2>
+                <div class="work-detail">
+                    <h3>壮乡春早</h3>
+                    <p>广西壮族自治区歌舞团</p>
+                    <audio controls src="../assets/audio/广西壮族自治区歌舞团 - 壮乡春早 (马骨胡)_L.ogg"></audio>
+                    <div class="actions">
+                        <button onclick="likeWork()">点赞</button>
+                        <button onclick="collectWork()">收藏</button>
+                        <button onclick="shareWork()">分享</button>
+                    </div>
+                    <div class="comment-section">
+                        <textarea placeholder="写下你的评论..."></textarea>
+                        <button onclick="postComment()">发布评论</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tabBar">
+            <div class="tab-item active" onclick="navigateTo('home')">
+                <span>首页</span>
+            </div>
+            <div class="tab-item" onclick="navigateTo('create')">
+                <span>创作</span>
+            </div>
+            <div class="tab-item" onclick="navigateTo('show')">
+                <span>展示</span>
+            </div>
+            <div class="tab-item" onclick="navigateTo('interact')">
+                <span>互动</span>
+            </div>
+            <div class="tab-item" onclick="navigateTo('profile')">
+                <span>我的</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
