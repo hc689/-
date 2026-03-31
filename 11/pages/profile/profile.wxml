@@ -1,0 +1,118 @@
+<view class="container">
+  <!-- 顶部装饰 -->
+  <view class="profile-banner">
+    <text class="banner-icon">👤</text>
+  </view>
+
+  <!-- 个人信息编辑模式 -->
+  <view class="profile-header" wx:if="{{!isEditing}}">
+    <text class="profile-avatar">{{avatarUrl ? '👤' : '👤'}}</text>
+    <view class="profile-info">
+      <text class="profile-username">{{username || '用户'}}</text>
+      <text class="profile-desc">{{userDesc || '音乐爱好者'}}</text>
+    </view>
+    <button class="edit-btn" bindtap="enterEditMode">编辑资料</button>
+  </view>
+
+  <!-- 编辑资料模式 -->
+  <view class="profile-edit" wx:else>
+    <view class="avatar-upload">
+      <text class="profile-avatar">{{avatarUrl ? '👤' : '👤'}}</text>
+      <view class="upload-overlay" bindtap="chooseAvatar">
+        <text class="upload-text">更换头像</text>
+      </view>
+    </view>
+    <view class="edit-form">
+      <view class="form-item">
+        <text class="form-label">用户名</text>
+        <input class="form-input" value="{{username}}" bindinput="bindUsernameInput" placeholder="请输入用户名"></input>
+      </view>
+      <view class="form-item">
+        <text class="form-label">个人简介</text>
+        <input class="form-input" value="{{userDesc}}" bindinput="bindDescInput" placeholder="请输入个人简介"></input>
+      </view>
+      <view class="form-actions">
+        <button class="cancel-btn" bindtap="cancelEdit">取消</button>
+        <button class="save-btn" bindtap="saveProfile">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计信息 -->
+  <view class="stats-section">
+    <view class="stat-item" bindtap="viewMyWorks">
+      <text class="stat-icon">🎶</text>
+      <text class="stat-number">{{stats.works}}</text>
+      <text class="stat-label">创作</text>
+    </view>
+    <view class="stat-item" bindtap="viewMyFavorites">
+      <text class="stat-icon">❤️</text>
+      <text class="stat-number">{{stats.favorites}}</text>
+      <text class="stat-label">收藏</text>
+    </view>
+    <view class="stat-item" bindtap="viewMyFollowing">
+      <text class="stat-icon">🤝</text>
+      <text class="stat-number">{{stats.following}}</text>
+      <text class="stat-label">关注</text>
+    </view>
+    <view class="stat-item" bindtap="viewMyFollowers">
+      <text class="stat-icon">👥</text>
+      <text class="stat-number">{{stats.followers}}</text>
+      <text class="stat-label">粉丝</text>
+    </view>
+  </view>
+
+  <!-- 个人作品 -->
+  <view class="works-section">
+    <text class="section-title">我的作品</text>
+    <view class="works-list">
+      <view class="work-item" wx:for="{{publishedSongs}}" wx:key="id" bindtap="viewWorkDetail" data-id="{{item.id}}">
+        <text class="work-cover">🎵</text>
+        <view class="work-info">
+          <text class="work-title">{{item.title}}</text>
+          <text class="work-artist">我的创作</text>
+          <text class="work-status">{{item.status}}</text>
+          <text class="work-time">{{item.uploadTime || item.createTime}}</text>
+        </view>
+      </view>
+      <view class="no-works" wx:if="{{publishedSongs.length === 0}}">
+        <text class="no-works-icon">🎵</text>
+        <text class="no-works-text">还没有发布作品</text>
+        <text class="no-works-desc">去创作页面上传你的音乐吧</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-section">
+    <view class="menu-item">
+      <text class="menu-icon">🎶</text>
+      <text class="menu-text">我的创作</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item">
+      <text class="menu-icon">❤️</text>
+      <text class="menu-text">我的收藏</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item">
+      <text class="menu-icon">🏆</text>
+      <text class="menu-text">我的成就</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item">
+      <text class="menu-icon">⚙️</text>
+      <text class="menu-text">设置</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <!-- 关于我们 -->
+  <view class="about-section">
+    <text class="about-title">关于壮乡乐脉</text>
+    <text class="about-content">
+      壮乡乐脉·广西音乐传承创新与传播平台是由汉语言文学与设计学学生共同发起的文化创新项目，致力于利用线上媒体平台传播和AI辅助创作，推动广西民族音乐传承。
+    </text>
+    <text class="about-version">版本 1.0.0</text>
+  </view>
+</view>

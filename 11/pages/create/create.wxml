@@ -1,0 +1,103 @@
+<view class="container">
+  <view class="create-header">
+    <text class="create-title">AI音乐创作</text>
+    <text class="create-subtitle">融合广西民族音乐元素，创作新民歌</text>
+  </view>
+
+  <!-- 顶部装饰 -->
+  <view class="create-banner">
+    <text class="banner-icon">🧠</text>
+  </view>
+
+  <!-- 已创作发布区域 -->
+  <view class="publish-section">
+    <text class="section-title">已创作，开始发布</text>
+    <view class="publish-list">
+      <view class="publish-item" wx:for="{{createdSongs}}" wx:key="id">
+        <text class="publish-icon">🎵</text>
+        <view class="publish-info">
+          <text class="publish-title">{{item.title}}</text>
+          <text class="publish-desc">{{item.status}}</text>
+        </view>
+        <button class="publish-btn" wx:if="{{item.status === '未发布'}}" bindtap="chooseMusic">上传并发布</button>
+        <text class="published-tag" wx:else>已发布</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 音乐风格选择 -->
+  <view class="style-section">
+    <text class="section-title">选择音乐风格</text>
+    <view class="style-list">
+      <view class="style-item {{selectedStyle === 'zhuang' ? 'active' : ''}}" data-style="zhuang" bindtap="selectStyle">
+        <text class="style-icon">🎵</text>
+        <text class="style-name">壮族民歌</text>
+      </view>
+      <view class="style-item {{selectedStyle === 'yao' ? 'active' : ''}}" data-style="yao" bindtap="selectStyle">
+        <text class="style-icon">🎶</text>
+        <text class="style-name">瑶族民歌</text>
+      </view>
+      <view class="style-item {{selectedStyle === 'dong' ? 'active' : ''}}" data-style="dong" bindtap="selectStyle">
+        <text class="style-icon">🎸</text>
+        <text class="style-name">侗族民歌</text>
+      </view>
+      <view class="style-item {{selectedStyle === 'miao' ? 'active' : ''}}" data-style="miao" bindtap="selectStyle">
+        <text class="style-icon">🎤</text>
+        <text class="style-name">苗族民歌</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 创作参数设置 -->
+  <view class="params-section">
+    <text class="section-title">创作参数</text>
+    <view class="param-item">
+      <text class="param-label">歌曲长度</text>
+      <picker range="{{songLengths}}" bindchange="bindLengthChange">
+        <view class="picker">
+          {{selectedLength}}
+        </view>
+      </picker>
+    </view>
+    <view class="param-item">
+      <text class="param-label">节奏速度</text>
+      <picker range="{{tempos}}" bindchange="bindTempoChange">
+        <view class="picker">
+          {{selectedTempo}}
+        </view>
+      </picker>
+    </view>
+    <view class="param-item">
+      <text class="param-label">情感风格</text>
+      <picker range="{{emotions}}" bindchange="bindEmotionChange">
+        <view class="picker">
+          {{selectedEmotion}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 歌词输入 -->
+  <view class="lyric-section">
+    <text class="section-title">歌词输入</text>
+    <textarea placeholder="请输入歌词内容，支持广西民族语言和汉语" class="lyric-input"></textarea>
+  </view>
+
+  <!-- 生成按钮 -->
+  <view class="generate-section">
+    <button class="generate-btn" bindtap="generateMusic">生成音乐</button>
+  </view>
+
+  <!-- 生成结果 -->
+  <view class="result-section" wx:if="{{hasResult}}">
+    <text class="section-title">生成结果</text>
+    <view class="audio-player">
+      <audio src="{{audioUrl}}" controls></audio>
+    </view>
+    <view class="result-actions">
+      <button class="action-btn" bindtap="editMusic">编辑</button>
+      <button class="action-btn" bindtap="saveMusic">保存</button>
+      <button class="action-btn" bindtap="shareMusic">分享</button>
+    </view>
+  </view>
+</view>

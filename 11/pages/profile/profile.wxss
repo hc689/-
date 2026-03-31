@@ -1,0 +1,367 @@
+.container {
+  padding: 30rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 顶部装饰 */
+.profile-banner {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-icon {
+  font-size: 100rpx;
+  opacity: 0.8;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* 个人信息头部 */
+.profile-header {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.profile-avatar {
+  font-size: 80rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-username {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.profile-desc {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+}
+
+.edit-btn {
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  line-height: 60rpx;
+}
+
+/* 编辑资料模式样式 */
+.profile-edit {
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.avatar-upload {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+
+.upload-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5rpx 15rpx;
+  border-radius: 15rpx;
+  font-size: 20rpx;
+  cursor: pointer;
+}
+
+.upload-text {
+  font-size: 20rpx;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.form-label {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-input {
+  height: 60rpx;
+  border: 1rpx solid #f0f0f0;
+  border-radius: 5rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+}
+
+.form-actions {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 20rpx;
+}
+
+.cancel-btn {
+  flex: 1;
+  height: 60rpx;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  line-height: 60rpx;
+}
+
+.save-btn {
+  flex: 1;
+  height: 60rpx;
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  line-height: 60rpx;
+}
+
+/* 统计信息 */
+.stats-section {
+  display: flex;
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5rpx);
+  opacity: 0.8;
+}
+
+.stat-icon {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.stat-number {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.stat-label {
+  font-size: 20rpx;
+  color: #666;
+}
+
+/* 功能菜单 */
+.menu-section {
+  background-color: white;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.menu-arrow {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 个人作品 */
+.works-section {
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  animation: fadeIn 0.8s ease-in-out 0.4s both;
+}
+
+.works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+  margin-top: 20rpx;
+}
+
+.work-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.work-item:hover {
+  transform: translateY(-5rpx);
+  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.1);
+}
+
+.work-cover {
+  font-size: 48rpx;
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.work-info {
+  flex: 1;
+}
+
+.work-title {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5rpx;
+  display: block;
+}
+
+.work-artist {
+  font-size: 20rpx;
+  color: #666;
+  margin-bottom: 5rpx;
+  display: block;
+}
+
+.work-status {
+  font-size: 18rpx;
+  color: #4caf50;
+  margin-bottom: 5rpx;
+  display: block;
+}
+
+.work-time {
+  font-size: 16rpx;
+  color: #999;
+  display: block;
+}
+
+.no-works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 20rpx;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 10rpx;
+}
+
+.no-works-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.5;
+}
+
+.no-works-text {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.no-works-desc {
+  font-size: 20rpx;
+  color: #999;
+}
+
+/* 关于我们 */
+.about-section {
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.about-content {
+  font-size: 22rpx;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.about-version {
+  font-size: 20rpx;
+  color: #999;
+  display: block;
+}

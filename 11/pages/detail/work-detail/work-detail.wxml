@@ -1,0 +1,92 @@
+<view class="container">
+  <!-- 作品信息 -->
+  <view class="work-header">
+    <image class="work-cover" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Guangxi%20Zhuang%20folk%20music%20album%20cover%2C%20traditional%20style%2C%20authentic%20Zhuang%20patterns%2C%20vibrant%20colors%2C%20musical%20elements&image_size=square"></image>
+    <view class="work-info">
+      <text class="work-title">壮乡情歌</text>
+      <text class="work-artist">李明</text>
+      <text class="work-stats">播放: 1234 | 点赞: 567 | 评论: 89</text>
+      <view class="work-tags">
+        <view class="work-tag">壮族民歌</view>
+        <view class="work-tag">AI创作</view>
+        <view class="work-tag">传统元素</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 音频播放器 -->
+  <view class="player-section">
+    <audio src="/audio/蒙鹂君 - 壮乡情歌_L.ogg" controls></audio>
+  </view>
+
+  <!-- 歌词 -->
+  <view class="lyric-section">
+    <text class="section-title">歌词</text>
+    <text class="lyric-content">
+      壮乡的山哎，壮乡的水，
+      壮乡的姑娘美如水。
+      山歌好比春江水，
+      不怕滩险弯又多。
+      
+      壮乡的歌哎，壮乡的舞，
+      壮乡的小伙壮如山。
+      唱不完的壮乡情，
+      跳不完的壮乡舞。
+    </text>
+  </view>
+
+  <!-- 作品介绍 -->
+  <view class="intro-section">
+    <text class="section-title">作品介绍</text>
+    <text class="intro-content">
+      这是一首融合了壮族传统音乐元素和现代编曲的新民歌，通过AI技术生成，展现了壮乡的美丽风光和民族文化。歌曲采用了壮族传统乐器和现代电子音乐的结合，创造出独特的音乐风格。
+    </text>
+  </view>
+
+  <!-- 评论区 -->
+  <view class="comment-section">
+    <text class="section-title">评论</text>
+    <view class="comment-list">
+      <view class="comment-item">
+        <image class="comment-avatar" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=user%20avatar%2C%20friendly%20face%2C%20simple%20style&image_size=square"></image>
+        <view class="comment-content">
+          <text class="comment-username">张三</text>
+          <text class="comment-text">这首歌真的很好听，很有壮族特色！</text>
+          <text class="comment-time">2024-01-15 10:30</text>
+        </view>
+      </view>
+      <view class="comment-item">
+        <image class="comment-avatar" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=user%20avatar%2C%20friendly%20face%2C%20simple%20style&image_size=square"></image>
+        <view class="comment-content">
+          <text class="comment-username">李四</text>
+          <text class="comment-text">AI生成的音乐能达到这个水平，真的很厉害！</text>
+          <text class="comment-time">2024-01-14 15:45</text>
+        </view>
+      </view>
+    </view>
+    <view class="comment-input-section">
+      <input placeholder="写下你的评论..." class="comment-input"></input>
+      <button class="comment-btn">发布</button>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-section">
+    <button class="action-btn">
+      <text class="action-icon">❤️</text>
+      <text class="action-text">点赞</text>
+    </button>
+    <button class="action-btn">
+      <text class="action-icon">⭐</text>
+      <text class="action-text">收藏</text>
+    </button>
+    <button class="action-btn">
+      <text class="action-icon">🔗</text>
+      <text class="action-text">分享</text>
+    </button>
+    <button class="action-btn">
+      <text class="action-icon">💬</text>
+      <text class="action-text">评论</text>
+    </button>
+  </view>
+</view>

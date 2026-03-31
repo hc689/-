@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="show-header">
+    <text class="show-title">作品展示</text>
+    <text class="show-subtitle">探索广西民族音乐的魅力</text>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-section">
+    <input placeholder="搜索音乐作品" class="search-input"></input>
+    <button class="search-btn">搜索</button>
+  </view>
+
+  <!-- 分类标签 -->
+  <view class="category-section">
+    <scroll-view scroll-x="true" class="category-scroll">
+      <view class="category-item {{activeCategory === 'all' ? 'active' : ''}}" bindtap="selectCategory" data-category="all">全部</view>
+      <view class="category-item {{activeCategory === 'zhuang' ? 'active' : ''}}" bindtap="selectCategory" data-category="zhuang">壮族民歌</view>
+      <view class="category-item {{activeCategory === 'yao' ? 'active' : ''}}" bindtap="selectCategory" data-category="yao">瑶族民歌</view>
+      <view class="category-item {{activeCategory === 'dong' ? 'active' : ''}}" bindtap="selectCategory" data-category="dong">侗族民歌</view>
+      <view class="category-item {{activeCategory === 'miao' ? 'active' : ''}}" bindtap="selectCategory" data-category="miao">苗族民歌</view>
+      <view class="category-item {{activeCategory === 'new' ? 'active' : ''}}" bindtap="selectCategory" data-category="new">新创作</view>
+    </scroll-view>
+  </view>
+
+  <!-- 作品列表 -->
+  <view class="works-section">
+    <text class="section-title">传统民歌</text>
+    <view class="works-list">
+      <view class="work-item">
+        <text class="work-cover">🎤</text>
+        <view class="work-info">
+          <text class="work-title">刘三姐</text>
+          <text class="work-artist">祖海</text>
+          <view class="work-stats">
+            <text class="work-stat">播放: 5678</text>
+            <text class="work-stat">点赞: 1234</text>
+          </view>
+        </view>
+        <audio src="/audio/祖海 - 刘三姐_L.ogg" controls class="work-audio"></audio>
+      </view>
+      <view class="work-item">
+        <text class="work-cover">🎼</text>
+        <view class="work-info">
+          <text class="work-title">壮乡情歌</text>
+          <text class="work-artist">蒙鹂君</text>
+          <view class="work-stats">
+            <text class="work-stat">播放: 3456</text>
+            <text class="work-stat">点赞: 890</text>
+          </view>
+        </view>
+        <audio src="/audio/蒙鹂君 - 壮乡情歌_L.ogg" controls class="work-audio"></audio>
+      </view>
+    </view>
+  </view>
+</view>

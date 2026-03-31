@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/create/create",
+    "pages/show/show",
+    "pages/interact/interact",
+    "pages/profile/profile"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/detail/",
+      "pages": [
+        "work-detail/work-detail"
+      ]
+    },
+    {
+      "root": "assets/",
+      "pages": []
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "壮乡乐脉",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/create/create",
+        "text": "创作"
+      },
+      {
+        "pagePath": "pages/show/show",
+        "text": "展示"
+      },
+      {
+        "pagePath": "pages/interact/interact",
+        "text": "互动"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

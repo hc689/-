@@ -1,0 +1,146 @@
+<view class="container">
+  <!-- 顶部轮播图 -->
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="4000" duration="800" circular="true">
+    <swiper-item>
+      <view class="banner-item" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); display: flex; align-items: center; justify-content: center;">
+        <text style="font-size: 80rpx; margin-bottom: 20rpx;">🎵</text>
+        <view class="banner-overlay" style="position: relative; text-align: center;">
+          <text class="banner-title">传统民族音乐</text>
+          <text class="banner-subtitle">感受千年文化底蕴</text>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="banner-item" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); display: flex; align-items: center; justify-content: center;">
+        <text style="font-size: 80rpx; margin-bottom: 20rpx;">🤖</text>
+        <view class="banner-overlay" style="position: relative; text-align: center;">
+          <text class="banner-title">AI创作音乐</text>
+          <text class="banner-subtitle">传统与科技的完美融合</text>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="banner-item" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); display: flex; align-items: center; justify-content: center;">
+        <text style="font-size: 80rpx; margin-bottom: 20rpx;">👥</text>
+        <view class="banner-overlay" style="position: relative; text-align: center;">
+          <text class="banner-title">音乐社区</text>
+          <text class="banner-subtitle">连接音乐爱好者</text>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 项目介绍 -->
+  <view class="intro">
+    <view class="intro-header">
+      <text class="intro-logo">🎵</text>
+      <text class="intro-title">壮乡乐脉</text>
+    </view>
+    <text class="intro-subtitle">广西音乐传承创新与传播平台</text>
+    <view class="intro-content">
+      <text>
+        由汉语言文学与设计学学生共同发起的文化创新项目，致力于利用线上媒体平台传播和AI辅助创作，推动广西民族音乐传承。
+      </text>
+      <text class="intro-image">📀</text>
+    </view>
+  </view>
+
+  <!-- 核心功能区 -->
+  <view class="features">
+    <text class="features-title">核心功能</text>
+    <view class="features-grid">
+      <view class="feature-item" bindtap="navigateToCreate" hover-class="feature-item-hover">
+        <view class="feature-icon-container">
+          <text class="feature-icon">🎶</text>
+        </view>
+        <text class="feature-text">AI音乐创作</text>
+        <text class="feature-desc">融合民族元素，AI生成新民歌</text>
+      </view>
+      <view class="feature-item" bindtap="navigateToShow" hover-class="feature-item-hover">
+        <view class="feature-icon-container">
+          <text class="feature-icon">💽</text>
+        </view>
+        <text class="feature-text">作品展示</text>
+        <text class="feature-desc">发现优秀音乐作品</text>
+      </view>
+      <view class="feature-item" bindtap="navigateToInteract" hover-class="feature-item-hover">
+        <view class="feature-icon-container">
+          <text class="feature-icon">👥</text>
+        </view>
+        <text class="feature-text">互动交流</text>
+        <text class="feature-desc">与音乐爱好者互动</text>
+      </view>
+      <view class="feature-item" bindtap="navigateToProfile" hover-class="feature-item-hover">
+        <view class="feature-icon-container">
+          <text class="feature-icon">👤</text>
+        </view>
+        <text class="feature-text">个人中心</text>
+        <text class="feature-desc">管理个人作品与收藏</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 特色内容 -->
+  <view class="highlights">
+    <text class="highlights-title">特色内容</text>
+    <view class="highlights-list">
+      <view class="highlight-item">
+        <text class="highlight-image">🎸</text>
+        <text class="highlight-title">传统乐器</text>
+        <text class="highlight-desc">探索广西特色乐器的独特魅力</text>
+      </view>
+      <view class="highlight-item">
+        <text class="highlight-image">🧠</text>
+        <text class="highlight-title">AI创作</text>
+        <text class="highlight-desc">体验人工智能与民族音乐的结合</text>
+      </view>
+      <view class="highlight-item">
+        <text class="highlight-image">🎤</text>
+        <text class="highlight-title">民歌传承</text>
+        <text class="highlight-desc">聆听千年传承的广西民歌</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最新动态 -->
+  <view class="news">
+    <text class="news-title">最新动态</text>
+    <view class="news-list">
+      <view class="news-item" hover-class="news-item-hover">
+        <view class="news-image-container">
+          <text class="news-image">🚀</text>
+        </view>
+        <view class="news-content">
+          <text class="news-date">2024-01-15</text>
+          <text class="news-title-text">平台正式上线，欢迎广西民歌爱好者加入</text>
+          <text class="news-brief">壮乡乐脉平台正式启动，为广西民族音乐爱好者提供交流和创作的空间</text>
+        </view>
+      </view>
+      <view class="news-item" hover-class="news-item-hover">
+        <view class="news-image-container">
+          <text class="news-image">🔬</text>
+        </view>
+        <view class="news-content">
+          <text class="news-date">2024-01-10</text>
+          <text class="news-title-text">AI音乐生成功能测试完成，支持多种民族音乐风格</text>
+          <text class="news-brief">AI音乐创作功能已完成测试，可生成具有广西民族特色的新作品</text>
+        </view>
+      </view>
+      <view class="news-item" hover-class="news-item-hover">
+        <view class="news-image-container">
+          <text class="news-image">🤝</text>
+        </view>
+        <view class="news-content">
+          <text class="news-date">2024-01-05</text>
+          <text class="news-title-text">与广西多家非遗音乐传承人达成合作</text>
+          <text class="news-brief">平台与广西多位非物质文化遗产音乐传承人建立合作关系</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部装饰 -->
+  <view class="footer-decoration">
+    <text class="footer-icon">🎵</text>
+  </view>
+</view>

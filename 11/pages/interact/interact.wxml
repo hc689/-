@@ -1,0 +1,82 @@
+<view class="container">
+  <view class="interact-header">
+    <text class="interact-title">互动交流</text>
+    <text class="interact-subtitle">分享音乐感悟，交流创作心得</text>
+  </view>
+
+  <!-- 顶部装饰 -->
+  <view class="interact-banner">
+    <text class="banner-icon">👥</text>
+  </view>
+
+  <!-- 互动话题 -->
+  <view class="topic-section">
+    <text class="section-title">热门话题</text>
+    <view class="topic-list">
+      <view class="topic-item">
+        <text class="topic-icon">🎵</text>
+        <text class="topic-name">#广西民歌创新#</text>
+        <text class="topic-count">123人参与</text>
+      </view>
+      <view class="topic-item">
+        <text class="topic-icon">🧠</text>
+        <text class="topic-name">#AI音乐创作#</text>
+        <text class="topic-count">89人参与</text>
+      </view>
+      <view class="topic-item">
+        <text class="topic-icon">📜</text>
+        <text class="topic-name">#壮族民歌传承#</text>
+        <text class="topic-count">67人参与</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评论区 -->
+  <view class="comment-section">
+    <text class="section-title">评论区</text>
+    <view class="comment-list">
+      <view class="comment-item">
+        <text class="comment-avatar">👤</text>
+        <view class="comment-content">
+          <text class="comment-username">张三</text>
+          <text class="comment-text">广西民歌真的很有特色，希望能通过这个平台让更多人了解！</text>
+          <view class="comment-actions">
+            <text class="comment-time">2024-01-15 10:30</text>
+            <text class="comment-action">点赞(23)</text>
+            <text class="comment-action">回复</text>
+          </view>
+        </view>
+      </view>
+      <view class="comment-item">
+        <text class="comment-avatar">👨</text>
+        <view class="comment-content">
+          <text class="comment-username">李四</text>
+          <text class="comment-text">AI生成的音乐真的很神奇，融合了传统元素和现代风格，太赞了！</text>
+          <view class="comment-actions">
+            <text class="comment-time">2024-01-14 15:45</text>
+            <text class="comment-action">点赞(15)</text>
+            <text class="comment-action">回复</text>
+          </view>
+        </view>
+      </view>
+      <view class="comment-item">
+        <text class="comment-avatar">👩</text>
+        <view class="comment-content">
+          <text class="comment-username">王五</text>
+          <text class="comment-text">作为广西人，看到这个平台很开心，希望能为家乡音乐的传承贡献一份力量。</text>
+          <view class="comment-actions">
+            <text class="comment-time">2024-01-13 09:20</text>
+            <text class="comment-action">点赞(31)</text>
+            <text class="comment-action">回复</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 发布评论 -->
+  <view class="post-section">
+    <input placeholder="写下你的想法..." class="post-input"></input>
+    <button class="post-btn">发布</button>
+  </view>
+</view>
